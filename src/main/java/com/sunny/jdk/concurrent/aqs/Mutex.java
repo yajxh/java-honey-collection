@@ -14,6 +14,7 @@ class Mutex implements Lock, java.io.Serializable {
     private static class Sync extends AbstractQueuedSynchronizer {
         // Reports whether in locked state
 
+        @Override
         protected boolean isHeldExclusively() {
             return getState() == 1;
         }
@@ -43,7 +44,9 @@ class Mutex implements Lock, java.io.Serializable {
         protected boolean tryRelease(int releases) {
             // Otherwise unused
             assert releases == 1;
-            if (getState() == 0) throw new IllegalMonitorStateException();
+            if (getState() == 0) {
+                throw new IllegalMonitorStateException();
+            }
             setExclusiveOwnerThread(null);
             setState(0);
             return true;
