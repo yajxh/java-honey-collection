@@ -1,0 +1,1 @@
+根据cache-api实现一套简易的基于LRU策略的sycache
