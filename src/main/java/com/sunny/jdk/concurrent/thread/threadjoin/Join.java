@@ -1,4 +1,4 @@
-package com.sunny.jdk.concurrent.thread;
+package com.sunny.jdk.concurrent.thread.threadjoin;
 
 import java.util.concurrent.TimeUnit;
 
