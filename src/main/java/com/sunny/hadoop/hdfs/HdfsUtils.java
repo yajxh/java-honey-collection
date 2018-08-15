@@ -16,13 +16,15 @@ import org.apache.hadoop.fs.FileStatus;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.zookeeper.common.IOUtils;
- 
+
 /**
- * operate hdfs file or directory util class
- * 
- * @author zhang
- * @since 2016-09-26
+ * <Description> operate hdfs file or directory util class<br>
  *
+ * @author Sunny<br>
+ * @version 1.0<br>
+ * @taskId: <br>
+ * @createDate 2018/08/15 13:58 <br>
+ * @see com.sunny.hadoop.hdfs <br>
  */
 public class HdfsUtils {
  
