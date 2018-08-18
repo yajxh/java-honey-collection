@@ -15,18 +15,12 @@ package com.sunny.jdk.concurrent.concurrenttool;
  */
 public class JoinCountDownLatchTest {
     public static void main(String[] args) throws InterruptedException {
-        Thread parser1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
+        Thread parser1 = new Thread(() -> {
 
-            }
         });
 
-        Thread parser2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("parser2 finish!");
-            }
+        Thread parser2 = new Thread(() -> {
+            System.out.println("parser2 finish!");
         });
 
         parser1.start();

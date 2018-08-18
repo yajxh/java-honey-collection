@@ -17,18 +17,15 @@ public class CyclicBarrierTest2 {
     static CyclicBarrier c = new CyclicBarrier(2, new A());
 
     public static void main(String[] args) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    c.await();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (BrokenBarrierException e) {
-                    e.printStackTrace();
-                }
-                System.out.println(1);
+        new Thread(() -> {
+            try {
+                c.await();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (BrokenBarrierException e) {
+                e.printStackTrace();
             }
+            System.out.println(1);
         }).start();
 
         try {

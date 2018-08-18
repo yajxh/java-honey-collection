@@ -20,11 +20,8 @@ public class HashMapInfiniteLoop {
             @Override
             public void run() {
                 for (int i = 0; i < 100000; i++) {
-                    new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            map.put(UUID.randomUUID().toString(), "");
-                        }
+                    new Thread(() -> {
+                        map.put(UUID.randomUUID().toString(), "");
                     }, "ftf-" + i).start();
                 }
             }
