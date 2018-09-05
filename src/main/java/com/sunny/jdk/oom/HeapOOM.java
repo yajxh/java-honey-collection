@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * <Description> Java 堆内存溢出异常测试
- *      VM Args: -Xms20m -Xmx20m -XX:+HeapDumpOnOutOfMemoryError<br>
+ *      VM Args: -Xms1024m -Xmx1024m -XX:+HeapDumpOnOutOfMemoryError<br>
  *
  * @author Sunny<br>
  * @version 1.0<br>
