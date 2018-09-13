@@ -51,7 +51,7 @@ public class AtomicIntegerVsInteger {
     }
 
     static class IntegerCounter {
-        private Integer count = new Integer(0);
+        private Integer count = Integer.valueOf(0);
 
         public void increment() {
            count++;
