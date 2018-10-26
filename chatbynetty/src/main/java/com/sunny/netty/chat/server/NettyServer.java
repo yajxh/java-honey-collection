@@ -1,5 +1,9 @@
 package com.sunny.netty.chat.server;
 
+import com.sunny.netty.chat.codec.PacketDecoder;
+import com.sunny.netty.chat.codec.PacketEncoder;
+import com.sunny.netty.chat.server.handler.LoginRequestHandler;
+import com.sunny.netty.chat.server.handler.MessageRequestHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -41,7 +45,23 @@ public class NettyServer {
 
                     @Override
                     protected void initChannel(NioSocketChannel ch) throws Exception {
-                        ch.pipeline().addLast(new ServerHandler());
+//                        ch.pipeline().addLast(new ServerHandler());
+
+//                        /********验证inbound和outbound的顺序************/
+//                        // inBound，处理读数据的逻辑链
+//                        ch.pipeline().addLast(new InBoundHandlerA());
+//                        ch.pipeline().addLast(new InBoundHandlerB());
+//                        ch.pipeline().addLast(new InBoundHandlerC());
+//
+//                        // outBound，处理写数据的逻辑链
+//                        ch.pipeline().addLast(new OutBoundHandlerA());
+//                        ch.pipeline().addLast(new OutBoundHandlerB());
+//                        ch.pipeline().addLast(new OutBoundHandlerC());
+
+                        ch.pipeline().addLast(new PacketDecoder());
+                        ch.pipeline().addLast(new LoginRequestHandler());
+                        ch.pipeline().addLast(new MessageRequestHandler());
+                        ch.pipeline().addLast(new PacketEncoder());
                     }
                 });
 
