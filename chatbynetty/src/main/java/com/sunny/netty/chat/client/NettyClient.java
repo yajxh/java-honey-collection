@@ -1,11 +1,15 @@
 package com.sunny.netty.chat.client;
 
+import com.sunny.netty.chat.client.console.ConsoleCommandManager;
+import com.sunny.netty.chat.client.console.LoginConsoleCommand;
+import com.sunny.netty.chat.client.handler.CreateGroupResponseHandler;
 import com.sunny.netty.chat.client.handler.LoginResponseHandler;
+import com.sunny.netty.chat.client.handler.LogoutResponseHandler;
 import com.sunny.netty.chat.client.handler.MessageResponseHandler;
 import com.sunny.netty.chat.codec.PacketDecoder;
 import com.sunny.netty.chat.codec.PacketEncoder;
-import com.sunny.netty.chat.protocol.request.MessageRequestPacket;
-import com.sunny.netty.chat.util.LoginUtil;
+import com.sunny.netty.chat.codec.Spliter;
+import com.sunny.netty.chat.util.SessionUtil;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -47,9 +51,12 @@ public class NettyClient {
                 .handler(new ChannelInitializer<SocketChannel>() {
                     @Override
                     public void initChannel(SocketChannel ch) {
+                        ch.pipeline().addLast(new Spliter());
                         ch.pipeline().addLast(new PacketDecoder());
                         ch.pipeline().addLast(new LoginResponseHandler());
+                        ch.pipeline().addLast(new LogoutResponseHandler());
                         ch.pipeline().addLast(new MessageResponseHandler());
+                        ch.pipeline().addLast(new CreateGroupResponseHandler());
                         ch.pipeline().addLast(new PacketEncoder());
                     }
                 });
@@ -78,14 +85,16 @@ public class NettyClient {
     }
 
     private static void startConsoleThread(Channel channel) {
+        ConsoleCommandManager consoleCommandManager = new ConsoleCommandManager();
+        LoginConsoleCommand loginConsoleCommand = new LoginConsoleCommand();
+        Scanner scanner = new Scanner(System.in);
+
         new Thread(() -> {
             while (!Thread.interrupted()) {
-                if (LoginUtil.hasLogin(channel)) {
-                    System.out.println("输入消息发送至服务端: ");
-                    Scanner sc = new Scanner(System.in);
-                    String line = sc.nextLine();
-
-                    channel.writeAndFlush(new MessageRequestPacket(line));
+                if (!SessionUtil.hasLogin(channel)) {
+                    loginConsoleCommand.exec(scanner, channel);
+                } else {
+                    consoleCommandManager.exec(scanner, channel);
                 }
             }
         }).start();

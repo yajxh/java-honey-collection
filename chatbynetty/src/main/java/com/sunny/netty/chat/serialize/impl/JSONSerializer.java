@@ -21,7 +21,7 @@ public class JSONSerializer implements Serializer {
      * @return
      */
     @Override
-    public byte getSerializerAlogrithm() {
+    public byte getSerializerAlgorithm() {
         return SerializerAlogrithm.JSON;
     }
 

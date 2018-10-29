@@ -2,8 +2,8 @@ package com.sunny.netty.chat.server;
 
 import com.sunny.netty.chat.codec.PacketDecoder;
 import com.sunny.netty.chat.codec.PacketEncoder;
-import com.sunny.netty.chat.server.handler.LoginRequestHandler;
-import com.sunny.netty.chat.server.handler.MessageRequestHandler;
+import com.sunny.netty.chat.codec.Spliter;
+import com.sunny.netty.chat.server.handler.*;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -58,9 +58,13 @@ public class NettyServer {
 //                        ch.pipeline().addLast(new OutBoundHandlerB());
 //                        ch.pipeline().addLast(new OutBoundHandlerC());
 
+                        ch.pipeline().addLast(new Spliter());
                         ch.pipeline().addLast(new PacketDecoder());
                         ch.pipeline().addLast(new LoginRequestHandler());
+                        ch.pipeline().addLast(new AuthHandler());
                         ch.pipeline().addLast(new MessageRequestHandler());
+                        ch.pipeline().addLast(new CreateGroupRequestHandler());
+                        ch.pipeline().addLast(new LogoutRequestHandler());
                         ch.pipeline().addLast(new PacketEncoder());
                     }
                 });

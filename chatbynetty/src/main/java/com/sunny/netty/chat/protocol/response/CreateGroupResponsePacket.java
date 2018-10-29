@@ -2,9 +2,10 @@ package com.sunny.netty.chat.protocol.response;
 
 import com.sunny.netty.chat.protocol.Packet;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import static com.sunny.netty.chat.protocol.command.Command.LOGIN_RESPONSE;
+import java.util.List;
+
+import static com.sunny.netty.chat.protocol.command.Command.CREATE_GROUP_RESPONSE;
 
 /**
  * <Description> <br>
@@ -12,24 +13,20 @@ import static com.sunny.netty.chat.protocol.command.Command.LOGIN_RESPONSE;
  * @author Sunny<br>
  * @version 1.0<br>
  * @taskId: <br>
- * @createDate 2018/10/25 20:47 <br>
+ * @createDate 2018/10/27 14:04 <br>
  * @see com.sunny.netty.chat.protocol.response <br>
  */
 @Data
-@NoArgsConstructor
-public class LoginResponsePacket extends Packet {
-
-    private String userId;
-
-    private String userName;
-
+public class CreateGroupResponsePacket extends Packet {
     private boolean success;
 
-    private String reason;
+    private String groupId;
+
+    private List<String> userNameList;
 
     @Override
     public Byte getCommand() {
-        return LOGIN_RESPONSE;
+
+        return CREATE_GROUP_RESPONSE;
     }
 }
-

@@ -3,7 +3,7 @@ package com.sunny.netty.chat.protocol.response;
 import com.sunny.netty.chat.protocol.Packet;
 import lombok.Data;
 
-import static com.sunny.netty.chat.protocol.command.Command.MESSAGE_RESPONSE;
+import static com.sunny.netty.chat.protocol.command.Command.LOGOUT_RESPONSE;
 
 /**
  * <Description> <br>
@@ -11,20 +11,19 @@ import static com.sunny.netty.chat.protocol.command.Command.MESSAGE_RESPONSE;
  * @author Sunny<br>
  * @version 1.0<br>
  * @taskId: <br>
- * @createDate 2018/10/25 23:54 <br>
+ * @createDate 2018/10/27 14:04 <br>
  * @see com.sunny.netty.chat.protocol.response <br>
  */
 @Data
-public class MessageResponsePacket extends Packet{
-    private String fromUserId;
+public class LogoutResponsePacket extends Packet {
+    private boolean success;
 
-    private String fromUserName;
+    private String reason;
 
-    private String message;
 
     @Override
     public Byte getCommand() {
 
-        return MESSAGE_RESPONSE;
+        return LOGOUT_RESPONSE;
     }
 }

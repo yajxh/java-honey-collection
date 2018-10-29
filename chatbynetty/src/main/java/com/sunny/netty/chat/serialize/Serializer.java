@@ -19,21 +19,15 @@ public interface Serializer {
      * 序列化算法
      * @return
      */
-    byte getSerializerAlogrithm();
+    byte getSerializerAlgorithm();
 
     /**
-     * java对象转换成二进制
-     * @param object
-     * @return
+     * java 对象转换成二进制
      */
     byte[] serialize(Object object);
 
     /**
-     *  二进制转换成java对象
-     * @param clazz
-     * @param bytes
-     * @param <T>
-     * @return
+     * 二进制转换成 java 对象
      */
     <T> T deserialize(Class<T> clazz, byte[] bytes);
 }
