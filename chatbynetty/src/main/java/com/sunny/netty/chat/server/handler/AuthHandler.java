@@ -2,6 +2,7 @@ package com.sunny.netty.chat.server.handler;
 
 import com.sunny.netty.chat.util.LoginUtil;
 import com.sunny.netty.chat.util.SessionUtil;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
@@ -14,7 +15,13 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
  * @createDate 2018/10/27 12:25 <br>
  * @see com.sunny.netty.chat.server.handler <br>
  */
+@ChannelHandler.Sharable
 public class AuthHandler extends ChannelInboundHandlerAdapter {
+    public static final AuthHandler INSTANCE = new AuthHandler();
+
+    private AuthHandler() {
+    }
+
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         if (!SessionUtil.hasLogin(ctx.channel())) {

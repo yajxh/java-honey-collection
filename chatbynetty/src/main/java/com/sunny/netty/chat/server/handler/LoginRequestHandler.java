@@ -5,6 +5,7 @@ import com.sunny.netty.chat.protocol.request.LoginRequestPacket;
 import com.sunny.netty.chat.protocol.response.LoginResponsePacket;
 import com.sunny.netty.chat.util.LoginUtil;
 import com.sunny.netty.chat.util.SessionUtil;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
@@ -20,7 +21,13 @@ import java.util.UUID;
  * @createDate 2018/10/26 16:08 <br>
  * @see com.sunny.netty.chat.server.handler <br>
  */
+@ChannelHandler.Sharable
 public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginRequestPacket> {
+    public static final LoginRequestHandler INSTANCE = new LoginRequestHandler();
+
+    protected LoginRequestHandler() {
+    }
+
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, LoginRequestPacket loginRequestPacket) throws Exception {
         LoginResponsePacket loginResponsePacket = new LoginResponsePacket();

@@ -1,5 +1,6 @@
 package com.sunny.netty.chat.server.handler;
 
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
@@ -12,7 +13,13 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
  * @createDate 2018/10/27 10:59 <br>
  * @see com.sunny.netty.chat.server.handler <br>
  */
+@ChannelHandler.Sharable
 public class LifeCyCleTestHandler extends ChannelInboundHandlerAdapter {
+    public static final LifeCyCleTestHandler INSTANCE = new LifeCyCleTestHandler();
+
+    private LifeCyCleTestHandler() {
+
+    }
     @Override
     public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
         System.out.println("逻辑处理器被添加：handlerAdded()");

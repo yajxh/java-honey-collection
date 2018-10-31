@@ -1,8 +1,10 @@
 package com.sunny.netty.chat.server;
 
+import com.sunny.netty.chat.codec.PacketCodecHandler;
 import com.sunny.netty.chat.codec.PacketDecoder;
 import com.sunny.netty.chat.codec.PacketEncoder;
 import com.sunny.netty.chat.codec.Spliter;
+import com.sunny.netty.chat.handler.IMIdleStateHandler;
 import com.sunny.netty.chat.server.handler.*;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
@@ -58,14 +60,14 @@ public class NettyServer {
 //                        ch.pipeline().addLast(new OutBoundHandlerB());
 //                        ch.pipeline().addLast(new OutBoundHandlerC());
 
+                        // 空闲检测
+                        ch.pipeline().addLast(new IMIdleStateHandler());
                         ch.pipeline().addLast(new Spliter());
-                        ch.pipeline().addLast(new PacketDecoder());
-                        ch.pipeline().addLast(new LoginRequestHandler());
-                        ch.pipeline().addLast(new AuthHandler());
-                        ch.pipeline().addLast(new MessageRequestHandler());
-                        ch.pipeline().addLast(new CreateGroupRequestHandler());
-                        ch.pipeline().addLast(new LogoutRequestHandler());
-                        ch.pipeline().addLast(new PacketEncoder());
+                        ch.pipeline().addLast(PacketCodecHandler.INSTANCE);
+                        ch.pipeline().addLast(LoginRequestHandler.INSTANCE);
+                        ch.pipeline().addLast(HeartBeatRequestHandler.INSTANCE);
+                        ch.pipeline().addLast(AuthHandler.INSTANCE);
+                        ch.pipeline().addLast(IMHandler.INSTANCE);
                     }
                 });
 

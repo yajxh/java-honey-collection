@@ -13,13 +13,19 @@ package com.sunny.netty.chat.server.handler;
 import com.sunny.netty.chat.protocol.request.LogoutRequestPacket;
 import com.sunny.netty.chat.protocol.response.LogoutResponsePacket;
 import com.sunny.netty.chat.util.SessionUtil;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
 /**
  * 登出请求
  */
+@ChannelHandler.Sharable
 public class LogoutRequestHandler extends SimpleChannelInboundHandler<LogoutRequestPacket> {
+    public static final LogoutRequestHandler INSTANCE = new LogoutRequestHandler();
+
+    protected LogoutRequestHandler() {
+    }
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, LogoutRequestPacket msg) {

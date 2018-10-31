@@ -1,6 +1,6 @@
 package com.sunny.netty.chat.codec;
 
-import com.sunny.netty.chat.protocol.PacketCodeC;
+import com.sunny.netty.chat.protocol.PacketCodec;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
@@ -24,7 +24,7 @@ public class Spliter extends LengthFieldBasedFrameDecoder {
 
     @Override
     protected Object decode(ChannelHandlerContext ctx, ByteBuf in) throws Exception {
-        if (in.getInt(in.readerIndex()) != PacketCodeC.MAGIC_NUMBER) {
+        if (in.getInt(in.readerIndex()) != PacketCodec.MAGIC_NUMBER) {
             ctx.channel().close();
             return null;
         }

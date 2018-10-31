@@ -1,17 +1,10 @@
 package com.sunny.netty.chat.protocol;
 
-import com.sunny.netty.chat.protocol.request.CreateGroupRequestPacket;
-import com.sunny.netty.chat.protocol.request.LoginRequestPacket;
-import com.sunny.netty.chat.protocol.request.LogoutRequestPacket;
-import com.sunny.netty.chat.protocol.request.MessageRequestPacket;
-import com.sunny.netty.chat.protocol.response.CreateGroupResponsePacket;
-import com.sunny.netty.chat.protocol.response.LoginResponsePacket;
-import com.sunny.netty.chat.protocol.response.LogoutResponsePacket;
-import com.sunny.netty.chat.protocol.response.MessageResponsePacket;
+import com.sunny.netty.chat.protocol.request.*;
+import com.sunny.netty.chat.protocol.response.*;
 import com.sunny.netty.chat.serialize.Serializer;
 import com.sunny.netty.chat.serialize.impl.JSONSerializer;
 import io.netty.buffer.ByteBuf;
-import io.netty.buffer.ByteBufAllocator;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,15 +20,16 @@ import static com.sunny.netty.chat.protocol.command.Command.*;
  * @createDate 2018/10/25 22:13 <br>
  * @see com.sunny.netty.chat.protocol <br>
  */
-public class PacketCodeC {
+public class PacketCodec {
+
     public static final int MAGIC_NUMBER = 0x12345678;
-    public static final PacketCodeC INSTANCE = new PacketCodeC();
+    public static final PacketCodec INSTANCE = new PacketCodec();
 
     private final Map<Byte, Class<? extends Packet>> packetTypeMap;
     private final Map<Byte, Serializer> serializerMap;
 
 
-    private PacketCodeC() {
+    private PacketCodec() {
         packetTypeMap = new HashMap<>();
         packetTypeMap.put(LOGIN_REQUEST, LoginRequestPacket.class);
         packetTypeMap.put(LOGIN_RESPONSE, LoginResponsePacket.class);
@@ -45,6 +39,16 @@ public class PacketCodeC {
         packetTypeMap.put(LOGOUT_RESPONSE, LogoutResponsePacket.class);
         packetTypeMap.put(CREATE_GROUP_REQUEST, CreateGroupRequestPacket.class);
         packetTypeMap.put(CREATE_GROUP_RESPONSE, CreateGroupResponsePacket.class);
+        packetTypeMap.put(JOIN_GROUP_REQUEST, JoinGroupRequestPacket.class);
+        packetTypeMap.put(JOIN_GROUP_RESPONSE, JoinGroupResponsePacket.class);
+        packetTypeMap.put(QUIT_GROUP_REQUEST, QuitGroupRequestPacket.class);
+        packetTypeMap.put(QUIT_GROUP_RESPONSE, QuitGroupResponsePacket.class);
+        packetTypeMap.put(LIST_GROUP_MEMBERS_REQUEST, ListGroupMembersRequestPacket.class);
+        packetTypeMap.put(LIST_GROUP_MEMBERS_RESPONSE, ListGroupMembersResponsePacket.class);
+        packetTypeMap.put(GROUP_MESSAGE_REQUEST, GroupMessageRequestPacket.class);
+        packetTypeMap.put(GROUP_MESSAGE_RESPONSE, GroupMessageResponsePacket.class);
+        packetTypeMap.put(HEARTBEAT_REQUEST, HeartBeatRequestPacket.class);
+        packetTypeMap.put(HEARTBEAT_RESPONSE, HeartBeatResponsePacket.class);
 
         serializerMap = new HashMap<>();
         Serializer serializer = new JSONSerializer();

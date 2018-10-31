@@ -1,7 +1,7 @@
 package com.sunny.netty.chat.codec;
 
 import com.sunny.netty.chat.protocol.Packet;
-import com.sunny.netty.chat.protocol.PacketCodeC;
+import com.sunny.netty.chat.protocol.PacketCodec;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
@@ -18,6 +18,6 @@ import io.netty.handler.codec.MessageToByteEncoder;
 public class PacketEncoder extends MessageToByteEncoder<Packet> {
     @Override
     protected void encode(ChannelHandlerContext ctx, Packet packet, ByteBuf out) throws Exception {
-        PacketCodeC.INSTANCE.encode(out, packet);
+        PacketCodec.INSTANCE.encode(out, packet);
     }
 }

@@ -5,6 +5,7 @@ import com.sunny.netty.chat.protocol.request.MessageRequestPacket;
 import com.sunny.netty.chat.protocol.response.MessageResponsePacket;
 import com.sunny.netty.chat.util.SessionUtil;
 import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
@@ -19,7 +20,13 @@ import java.util.Date;
  * @createDate 2018/10/26 16:07 <br>
  * @see com.sunny.netty.chat.server.handler <br>
  */
+@ChannelHandler.Sharable
 public class MessageRequestHandler extends SimpleChannelInboundHandler<MessageRequestPacket>  {
+    public static final MessageRequestHandler INSTANCE = new MessageRequestHandler();
+
+    protected MessageRequestHandler() {
+    }
+
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, MessageRequestPacket messageRequestPacket) throws Exception {
         // 1.拿到消息发送方的会话信息
