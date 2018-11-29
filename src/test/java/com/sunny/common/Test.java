@@ -16,9 +16,13 @@ public class Test {
     }
     static int i = 0;
     public static void main(String[] args) {
-        System.out.println(1 << 3);
-        System.out.println(1024 >>> 1);
-        System.out.println(1024 >> 1);
+//        System.out.println(1 << 3);
+//        System.out.println(1024 >>> 1);
+//        System.out.println(1024 >> 1);
+
+        System.out.println(2 & -2);
+        System.out.println(Integer.toBinaryString(-2));
+        System.out.println(Integer.toBinaryString(2));
 
     }
 }

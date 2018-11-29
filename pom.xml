@@ -6,7 +6,13 @@
 
     <groupId>groupId</groupId>
     <artifactId>java-honey-collection</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>concurrentfirst</module>
+        <module>jvm-sunny</module>
+        <module>concurrent-sunny</module>
+    </modules>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-common -->
         <dependency>
