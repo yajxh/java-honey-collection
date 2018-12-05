@@ -12,6 +12,7 @@
         <module>concurrentfirst</module>
         <module>jvm-sunny</module>
         <module>concurrent-sunny</module>
+        <module>jmh-sunny</module>
     </modules>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-common -->

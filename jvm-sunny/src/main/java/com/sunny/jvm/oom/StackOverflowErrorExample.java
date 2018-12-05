@@ -1,7 +1,7 @@
 package com.sunny.jvm.oom;
 
 /**
- * <Description> <br>
+ * <Description> java.lang.StackOverflowError<br>
  *
  * @author Sunny<br>
  * @version 1.0<br>
