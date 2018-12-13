@@ -1,4 +1,4 @@
-package com.sunny.concurrent.container;
+package com.sunny.concurrent.hashmap;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +11,7 @@ import java.util.UUID;
  * @version 1.0<br>
  * @taskId: <br>
  * @createDate 2018/08/09 13:09 <br>
- * @see com.sunny.concurrent.container <br>
+ * @see com.sunny.concurrent.hashmap <br>
  */
 public class HashMapInfiniteLoop {
     public static void main(String[] args) throws InterruptedException {

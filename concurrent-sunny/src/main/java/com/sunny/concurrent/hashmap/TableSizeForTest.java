@@ -1,4 +1,4 @@
-package com.sunny.jvm.hashmap;
+package com.sunny.concurrent.hashmap;
 
 /**
  * <Description> <br>
@@ -7,7 +7,7 @@ package com.sunny.jvm.hashmap;
  * @version 1.0<br>
  * @taskId: <br>
  * @createDate 2018/10/23 14:02 <br>
- * @see com.sunny.jvm.hashmap <br>
+ * @see com.sunny.concurrent.hashmap <br>
  */
 public class TableSizeForTest {
     static final int MAXIMUM_CAPACITY = 1 << 30;

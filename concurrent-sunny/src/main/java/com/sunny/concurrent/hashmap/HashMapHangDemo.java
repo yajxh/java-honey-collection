@@ -1,4 +1,4 @@
-package com.sunny.jvm.hashmap;
+package com.sunny.concurrent.hashmap;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +11,7 @@ import java.util.Random;
  * @version 1.0<br>
  * @taskId: <br>
  * @createDate 2018/10/22 10:59 <br>
- * @see com.sunny.jvm.hashmap <br>
+ * @see com.sunny.concurrent.hashmap <br>
  */
 public class HashMapHangDemo {
     final Map<Integer, Object> holder = new HashMap<Integer, Object>();
