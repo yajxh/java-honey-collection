@@ -54,7 +54,8 @@ public class Deprecated {
             while (true){
                 System.out.println(Thread.currentThread() + " Run at " + format.format(new Date()));
                 try {
-                    Thread.sleep(1000);
+                    //Thread.sleep(1000);
+                    TimeUnit.MILLISECONDS.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

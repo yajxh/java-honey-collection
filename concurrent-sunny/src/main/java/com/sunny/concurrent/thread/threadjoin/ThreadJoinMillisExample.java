@@ -1,5 +1,7 @@
 package com.sunny.concurrent.thread.threadjoin;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * <Description>  <br>
  *
@@ -33,7 +35,8 @@ public class ThreadJoinMillisExample {
 		@Override
 		public void run() {
 			try {
-				Thread.sleep(100000);
+				//Thread.sleep(100000);
+				TimeUnit.MILLISECONDS.sleep(10000);
 			} catch (InterruptedException e) {
 				System.out.println("Subtask Interrupted!");
 			}

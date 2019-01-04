@@ -1,5 +1,7 @@
 package com.sunny.concurrent.thread;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * <Description> 运行Daemon程序，可以看到在终端或者命令提示符上没有任何输出。main线程（非Daemon线程）
  * 在启动了线程DaemonRunner之后随着main方法执行完毕而终止，而此时Java虚拟机中已经没有非Daemon线程，
@@ -27,7 +29,8 @@ public class Daemon {
         @Override
         public void run() {
             try {
-                Thread.sleep(10000);
+                //Thread.sleep(10000);
+                TimeUnit.MILLISECONDS.sleep(10000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {

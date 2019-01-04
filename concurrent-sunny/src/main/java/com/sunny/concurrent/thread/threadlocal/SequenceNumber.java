@@ -1,5 +1,7 @@
 package com.sunny.concurrent.thread.threadlocal;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * <Description> <br>
  *
@@ -27,7 +29,8 @@ public class SequenceNumber {
         @Override
         public void run() {
             try {
-                Thread.sleep(10000); //方便多线程调试
+                //Thread.sleep(10000); //方便多线程调试
+                TimeUnit.MILLISECONDS.sleep(10000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -46,9 +49,11 @@ public class SequenceNumber {
         TestClient t2 = new TestClient(sn);
         TestClient t3 = new TestClient(sn);
         t1.start();
-        Thread.sleep(50000); //方便多线程调试
+        //Thread.sleep(50000); //方便多线程调试
+        TimeUnit.MILLISECONDS.sleep(10000);
         t2.start();
-        Thread.sleep(50000); //方便多线程调试
+        //Thread.sleep(50000); //方便多线程调试
+        TimeUnit.MILLISECONDS.sleep(10000);
         t3.start();
     }
 }

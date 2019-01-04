@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * <Description> 设置虚拟机参数：-Xms100M -Xms100m -XX:+UseSerialGC -XX:+PrintGCDetails<br>
@@ -20,11 +21,13 @@ public class JConsoleTool {
     }
 
     public static void fillHeap(int num) throws InterruptedException {
-        Thread.sleep(20000); //先运行程序，在执行监控
+        //Thread.sleep(20000); //先运行程序，在执行监控
+        TimeUnit.MILLISECONDS.sleep(20000);
         List<OOMObject> list = new ArrayList<OOMObject>();
         for (int i = 0; i < num; i++) {
             // 稍作延时，令监视曲线的变化更加明显
-            Thread.sleep(50);
+            //Thread.sleep(50);
+            TimeUnit.MILLISECONDS.sleep(50);
             list.add(new OOMObject());
         }
         System.gc();

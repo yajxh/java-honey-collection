@@ -3,6 +3,7 @@ package com.sunny.concurrent.concurrenttool;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.TimeUnit;
 
 /**
  * <Description> 在代码中，虽然有30个线程在执行，但是只允许10个并发执行。
@@ -29,7 +30,8 @@ public class SemaphoreTest {
                 try {
                     s.acquire();
                     System.out.println("save data");
-                    Thread.sleep(10000);
+                    //Thread.sleep(10000);
+                    TimeUnit.MILLISECONDS.sleep(10000);
                     s.release();
                 } catch (InterruptedException e) {
                     e.printStackTrace();

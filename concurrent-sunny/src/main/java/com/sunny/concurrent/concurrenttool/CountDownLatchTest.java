@@ -1,6 +1,7 @@
 package com.sunny.concurrent.concurrenttool;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 /**
  * <Description> CountDownLatch的构造函数接收一个int类型的参数作为计数器，如果你想等待N个点完成，
@@ -24,7 +25,8 @@ public class CountDownLatchTest {
             System.out.println(2);
             c.countDown();
         }).start();
-        Thread.sleep(10000);
+        //Thread.sleep(10000);
+        TimeUnit.MILLISECONDS.sleep(10000);
         System.out.println(3);
     }
 }

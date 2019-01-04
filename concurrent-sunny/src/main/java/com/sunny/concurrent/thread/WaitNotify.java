@@ -70,7 +70,8 @@ public class WaitNotify {
                             + new SimpleDateFormat("HH:mm:ss").format(new Date()));
                     lock.notifyAll();
                     flag = false;
-                    Thread.sleep(5000);
+                    //Thread.sleep(5000);
+                    TimeUnit.MILLISECONDS.sleep(5000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -81,7 +82,8 @@ public class WaitNotify {
                 System.out.println(Thread.currentThread() + " hold lock again. sleep " +
                         "@ " + new SimpleDateFormat("HH:mm:ss").format(new Date()));
                 try {
-                    Thread.sleep(5000);
+                    //Thread.sleep(5000);
+                    TimeUnit.MILLISECONDS.sleep(5000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

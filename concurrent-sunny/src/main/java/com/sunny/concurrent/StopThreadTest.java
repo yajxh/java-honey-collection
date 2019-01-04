@@ -1,5 +1,7 @@
 package com.sunny.concurrent;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * <Description> <br>
  *
@@ -17,7 +19,8 @@ public class StopThreadTest implements Runnable  {
         Thread thread = new Thread(stopThreadTest);
         thread.start();
         try {
-            Thread.sleep(1000);
+            //Thread.sleep(1000);
+            TimeUnit.MILLISECONDS.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

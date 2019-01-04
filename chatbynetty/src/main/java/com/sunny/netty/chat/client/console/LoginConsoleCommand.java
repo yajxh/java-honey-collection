@@ -4,6 +4,7 @@ import com.sunny.netty.chat.protocol.request.LoginRequestPacket;
 import io.netty.channel.Channel;
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 /**
  * <Description> <br>
@@ -31,7 +32,8 @@ public class LoginConsoleCommand implements ConsoleCommand {
 
     private static void waitForLoginResponse() {
         try {
-            Thread.sleep(1000);
+            //Thread.sleep(1000);
+            TimeUnit.MILLISECONDS.sleep(1000);
         } catch (InterruptedException ignored) {
         }
     }

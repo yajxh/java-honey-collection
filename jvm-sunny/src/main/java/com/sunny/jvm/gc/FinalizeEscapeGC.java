@@ -1,5 +1,7 @@
 package com.sunny.jvm.gc;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * <Description> 此代码演示两点：
  * 1. 对象可以再被GC时自我拯救
@@ -32,7 +34,8 @@ public class FinalizeEscapeGC {
         SAVE_HOOK = null;
         System.gc();
         //因为finalize方法优先级很低，所以暂停0.5秒以等待它
-        Thread.sleep(500);
+        //Thread.sleep(500);
+        TimeUnit.MILLISECONDS.sleep(500);
         if (SAVE_HOOK != null) {
             SAVE_HOOK.isAlive();
         } else {
@@ -43,7 +46,8 @@ public class FinalizeEscapeGC {
         SAVE_HOOK = null;
         System.gc();
         //因为finalize方法优先级很低，所以暂停0.5秒以等待它
-        Thread.sleep(500);
+        //Thread.sleep(500);
+        TimeUnit.MILLISECONDS.sleep(500);
         if (SAVE_HOOK != null) {
             SAVE_HOOK.isAlive();
         } else {

@@ -1,5 +1,7 @@
 package com.sunny.concurrent.thread.threadlocal;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * <Description> <br>
  *
@@ -36,7 +38,8 @@ public class MyInheritableThreadLocal {
         new Thread(new MyIntegerTask("IntegerTask1")).start();
         //2.中间休息3秒，用以测试数据差异
         try {
-            Thread.sleep(3000);
+            //Thread.sleep(3000);
+            TimeUnit.MILLISECONDS.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -86,7 +89,8 @@ public class MyInheritableThreadLocal {
                 }
                 try
                 {
-                    Thread.sleep(1000);
+                    //Thread.sleep(1000);
+                    TimeUnit.MILLISECONDS.sleep(1000);
                 }
                 catch (InterruptedException e)
                 {

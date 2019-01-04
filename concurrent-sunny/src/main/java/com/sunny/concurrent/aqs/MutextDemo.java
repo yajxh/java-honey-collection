@@ -1,5 +1,7 @@
 package com.sunny.concurrent.aqs;
 
+import java.util.concurrent.TimeUnit;
+
 public class MutextDemo {
     private static Mutex mutex = new Mutex();
 
@@ -8,7 +10,8 @@ public class MutextDemo {
             Thread thread = new Thread(() -> {
                 mutex.lock();
                 try {
-                    Thread.sleep(3000);
+                    //Thread.sleep(3000);
+                    TimeUnit.MILLISECONDS.sleep(3000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {

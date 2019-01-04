@@ -1,5 +1,7 @@
 package com.sunny.concurrent;
 
+import java.util.concurrent.TimeUnit;
+
 public class DeadLockDemo {
     private static String A = "A";
     private static String B = "B";
@@ -13,7 +15,8 @@ public class DeadLockDemo {
             synchronized (A) {
                 try {
                     System.out.println("0");
-                    Thread.sleep(2000);
+                    //Thread.sleep(2000);
+                    TimeUnit.MILLISECONDS.sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

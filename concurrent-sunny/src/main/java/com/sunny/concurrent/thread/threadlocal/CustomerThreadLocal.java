@@ -2,6 +2,7 @@ package com.sunny.concurrent.thread.threadlocal;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * <Description> <br>
@@ -50,13 +51,15 @@ public class CustomerThreadLocal {
 
         public void increase() throws InterruptedException {
             value.set(10);
-            Thread.sleep(10);
+           // Thread.sleep(10);
+            TimeUnit.MILLISECONDS.sleep(10);
             System.out.println("increase value: " + value.get());
         }
 
         public void decrease() throws InterruptedException {
             value.set(-10);
-            Thread.sleep(10);
+            //Thread.sleep(10);
+            TimeUnit.MILLISECONDS.sleep(10);
             System.out.println("decrease value: " + value.get());
         }
     }
