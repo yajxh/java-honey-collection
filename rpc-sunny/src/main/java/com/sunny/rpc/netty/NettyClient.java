@@ -8,6 +8,7 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.string.StringEncoder;
 
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
  * <Description> <br>
@@ -35,7 +36,8 @@ public class NettyClient {
         Channel channel = bootstrap.connect("127.0.0.1", 8000).channel();
         while (true) {
             channel.writeAndFlush(new Date() + ": hello world!");
-            Thread.sleep(2000);
+            //Thread.sleep(2000);
+            TimeUnit.MILLISECONDS.sleep(2000);
         }
     }
 }

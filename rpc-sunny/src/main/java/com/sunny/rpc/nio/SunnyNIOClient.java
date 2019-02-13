@@ -5,6 +5,7 @@ import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 /**
  * <Description> step: <br>
@@ -45,7 +46,8 @@ public class SunnyNIOClient {
             buffer.clear();
 
             //wait for 2 seconds before sending next message
-            Thread.sleep(2000);
+            //Thread.sleep(2000);
+            TimeUnit.MILLISECONDS.sleep(2000);
         }
 
         sunnyClient.close();
