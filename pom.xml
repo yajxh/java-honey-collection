@@ -13,6 +13,10 @@
         <module>jvm-sunny</module>
         <module>concurrent-sunny</module>
         <module>jmh-sunny</module>
+        <module>dubbo-nacos-sunny</module>
+        <module>io-sunny</module>
+        <module>security-sunny</module>
+        <module>rpc-sunny</module>
     </modules>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-common -->
@@ -24,6 +28,10 @@
                 <exclusion>
                     <groupId>org.apache.zookeeper</groupId>
                     <artifactId>zookeeper</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>

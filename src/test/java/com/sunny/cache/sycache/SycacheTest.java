@@ -7,6 +7,8 @@ import com.sunny.cache.sycache.store.impl.LRUDataStore;
 import com.sunny.cache.sycache.store.impl.WeakValueDataStore;
 import org.junit.Test;
 
+import java.util.concurrent.TimeUnit;
+
 public class SycacheTest {
 
     @Test
@@ -28,7 +30,8 @@ public class SycacheTest {
         user = null;
         System.out.println("Hello " + cache.get(key).getName());
         System.gc();
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
+        TimeUnit.MILLISECONDS.sleep(1000);
         System.out.println("Hello " + cache.get(key));
     }
 
