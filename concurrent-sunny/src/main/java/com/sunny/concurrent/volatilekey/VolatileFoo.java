@@ -19,7 +19,7 @@ public class VolatileFoo {
     /**
      * init_value的初始值
      */
-    static int init_value = 0;
+    static volatile int init_value = 0;
 
     public static void main(String[] args)
     {
