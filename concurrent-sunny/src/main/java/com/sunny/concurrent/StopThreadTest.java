@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  * @version 1.0<br>
  * @taskId: <br>
  * @createDate 2018/10/23 9:32 <br>
- * @see com.sunny.jvm.concurrent <br>
+ * @see com.sunny.concurrent <br>
  */
 public class StopThreadTest implements Runnable  {
 
