@@ -3,7 +3,7 @@ package com.sunny.concurrent.volatilekey;
 import java.util.concurrent.TimeUnit;
 
 /**
- * <Description> <br>
+ * <Description>VM： -server -Xcomp -XX:+UnlockDiagnosticVMOptions -XX:CompileCommand=dontinline,*VolatileFoo.main -XX:CompileCommand=compileonly,*VolatileFoo.main -XX:+PrintAssembly<br>
  *
  * @author Sunny<br>
  * @version 1.0<br>
