@@ -6,17 +6,27 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="chatbynetty" />
-        <module name="concurrent-sunny" />
+        <module name="io-sunny" />
+        <module name="rpc-sunny" />
         <module name="jvm-sunny" />
+        <module name="dubbo-nacos-sunny" />
+        <module name="concurrent-sunny" />
+        <module name="chatbynetty" />
+        <module name="security-sunny" />
+        <module name="jmh-sunny" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="chatbynetty" target="1.8" />
-      <module name="concurrent-sunny" target="1.8" />
+      <module name="chatbynetty" target="1.5" />
+      <module name="concurrent-sunny" target="1.5" />
       <module name="concurrentfirst" target="1.8" />
-      <module name="java-honey-collection" target="1.8" />
-      <module name="jvm-sunny" target="1.8" />
+      <module name="dubbo-nacos-sunny" target="1.5" />
+      <module name="io-sunny" target="1.5" />
+      <module name="java-honey-collection" target="1.5" />
+      <module name="jmh-sunny" target="1.5" />
+      <module name="jvm-sunny" target="1.5" />
+      <module name="rpc-sunny" target="1.5" />
+      <module name="security-sunny" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
