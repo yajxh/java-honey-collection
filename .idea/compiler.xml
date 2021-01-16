@@ -11,6 +11,7 @@
         <module name="jvm-sunny" />
         <module name="dubbo-nacos-sunny" />
         <module name="concurrent-sunny" />
+        <module name="pattern-sunny" />
         <module name="chatbynetty" />
         <module name="security-sunny" />
         <module name="jmh-sunny" />
@@ -25,6 +26,7 @@
       <module name="java-honey-collection" target="1.8" />
       <module name="jmh-sunny" target="1.8" />
       <module name="jvm-sunny" target="1.8" />
+      <module name="pattern-sunny" target="1.8" />
       <module name="rpc-sunny" target="1.8" />
       <module name="security-sunny" target="1.8" />
     </bytecodeTargetLevel>

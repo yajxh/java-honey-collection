@@ -16,6 +16,7 @@
         <module>io-sunny</module>
         <module>security-sunny</module>
         <module>rpc-sunny</module>
+        <module>pattern-sunny</module>
     </modules>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-common -->
