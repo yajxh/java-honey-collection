@@ -17,16 +17,16 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="chatbynetty" target="1.5" />
-      <module name="concurrent-sunny" target="1.5" />
+      <module name="chatbynetty" target="1.8" />
+      <module name="concurrent-sunny" target="1.8" />
       <module name="concurrentfirst" target="1.8" />
-      <module name="dubbo-nacos-sunny" target="1.5" />
-      <module name="io-sunny" target="1.5" />
-      <module name="java-honey-collection" target="1.5" />
-      <module name="jmh-sunny" target="1.5" />
-      <module name="jvm-sunny" target="1.5" />
-      <module name="rpc-sunny" target="1.5" />
-      <module name="security-sunny" target="1.5" />
+      <module name="dubbo-nacos-sunny" target="1.8" />
+      <module name="io-sunny" target="1.8" />
+      <module name="java-honey-collection" target="1.8" />
+      <module name="jmh-sunny" target="1.8" />
+      <module name="jvm-sunny" target="1.8" />
+      <module name="rpc-sunny" target="1.8" />
+      <module name="security-sunny" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

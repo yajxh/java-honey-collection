@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
-  <component name="CheckStyle-IDEA-Module">
-    <option name="configuration">
-      <map />
-    </option>
-  </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
@@ -22,6 +17,7 @@
     <orderEntry type="library" name="Maven: com.lmax:disruptor:3.3.2" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.21" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.cache:cache-api:1.1.0" level="project" />
     <orderEntry type="library" name="Maven: cglib:cglib:3.2.7" level="project" />
     <orderEntry type="library" name="Maven: org.ow2.asm:asm:6.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.ant:ant:1.10.3" level="project" />
@@ -160,7 +156,6 @@
     <orderEntry type="library" name="Maven: oro:oro:2.0.8" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jdt:core:3.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.8.8" level="project" />
-    <orderEntry type="library" name="Maven: javax.cache:cache-api:1.1.0" level="project" />
   </component>
   <component name="POM File Configuration" pomFile="" />
 </module>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/chatbynetty/chatbynetty.iml" filepath="$PROJECT_DIR$/chatbynetty/chatbynetty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/concurrent-sunny/concurrent-sunny.iml" filepath="$PROJECT_DIR$/concurrent-sunny/concurrent-sunny.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo-nacos-sunny/dubbo-nacos-sunny.iml" filepath="$PROJECT_DIR$/dubbo-nacos-sunny/dubbo-nacos-sunny.iml" />
+      <module fileurl="file://$PROJECT_DIR$/io-sunny/io-sunny.iml" filepath="$PROJECT_DIR$/io-sunny/io-sunny.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-honey-collection.iml" filepath="$PROJECT_DIR$/java-honey-collection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jmh-sunny/jmh-sunny.iml" filepath="$PROJECT_DIR$/jmh-sunny/jmh-sunny.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jvm-sunny/jvm-sunny.iml" filepath="$PROJECT_DIR$/jvm-sunny/jvm-sunny.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rpc-sunny/rpc-sunny.iml" filepath="$PROJECT_DIR$/rpc-sunny/rpc-sunny.iml" />
+      <module fileurl="file://$PROJECT_DIR$/security-sunny/security-sunny.iml" filepath="$PROJECT_DIR$/security-sunny/security-sunny.iml" />
+    </modules>
+  </component>
+</project>

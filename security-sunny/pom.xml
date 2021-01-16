@@ -13,11 +13,12 @@
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+
+        <!-- https://mvnrepository.com/artifact/org.apache.directory.studio/org.apache.commons.codec -->
         <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-            <version>1.15</version>
+            <groupId>org.apache.directory.studio</groupId>
+            <artifactId>org.apache.commons.codec</artifactId>
+            <version>1.8</version>
         </dependency>
 
     </dependencies>
